@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
+import java.awt.Window;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -18,6 +19,11 @@ import board.Komadai;
 public class Komadai_panel extends JPanel{
 	private GridBagLayout grid_bag_layout;
 	private JPanel[] panel_array;//0:歩
+	private Window him;
+
+	public Komadai_panel(Window her) {
+		him = her;
+	}
 
 	public void change_color(int b) {
 		JPanel panel = panel_array[b-1];
@@ -66,7 +72,7 @@ public class Komadai_panel extends JPanel{
 		if(koma_many>0) {
 			JLabel label = new JLabel(""+koma_many);
 			///駒の画像を表示させる。
-			ImageIcon icon = Make_koma_image.make_koma_image(b, teban);
+			ImageIcon icon = Make_koma_image.make_koma_image(b, teban, him);
 			Image image = icon.getImage().getScaledInstance(36, 40, Image.SCALE_DEFAULT);
 			icon = new ImageIcon(image);
 			JButton button = new JButton(icon);
@@ -143,7 +149,7 @@ public class Komadai_panel extends JPanel{
 					gbl.setConstraints(panel, gbc);
 					JLabel label = new JLabel(""+koma_many);
 					///駒の画像を表示させる。
-					ImageIcon icon = Make_koma_image.make_koma_image(koma_number, teban);
+					ImageIcon icon = Make_koma_image.make_koma_image(koma_number, teban, him);
 					System.out.println(""+koma_number+","+i+","+j);
 					Image image = icon.getImage().getScaledInstance(36, 40, Image.SCALE_DEFAULT);
 					icon = new ImageIcon(image);

@@ -117,7 +117,7 @@ public class Komadai {
 				all_point += koma.get_point_teban() * komadai[i];
 			}
 		}
-		return (int)(all_point * 1.3);//持ち駒は持っていた方が特
+		return (int)(all_point * 1.1);//持ち駒は持っていた方が特
 		//return all_point;
 	}
 	/**
@@ -193,7 +193,7 @@ public class Komadai {
 			return;
 		}
 		if(komadai[koma_number]<1) {
-			System.out.println("error: Komadai decrease_komadai not have .koma number");
+			System.out.println("error: Komadai decrease_komadai not have");
 			return;
 		}
 		komadai[koma_number] -= 1;

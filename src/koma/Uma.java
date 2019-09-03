@@ -35,11 +35,7 @@ public class Uma extends Koma {
 					add_move_place(i);
 				}else {
 					if(koma.get_teban() != get_teban()) {
-						//敵の駒に効いている
 						add_move_place(i);
-						add_point_enemy(koma);
-					}else {
-						add_point_my_koma();
 					}
 				}
 			}

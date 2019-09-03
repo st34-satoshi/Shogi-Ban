@@ -65,21 +65,17 @@ public class Value {
 			}
 		}
 		//詰みチェック,自分の玉に王手がかかっていて3手で詰むか
-		/*
-		if(Tumi_check.check_tumi_for_gyoku(kyokumen.clone(),0)) {
+		if(Tumi_check.check_tumi_for_gyoku(kyokumen,2)) {
 			//詰みがある.手番が負けている。
 			set_lose(kyokumen.get_teban());
 			return;
 		}
-		*/
 		//詰みチェック,相手の玉を詰ますことができるか
-		/*
 		if(Tumi_check.check_tumi_n_te(kyokumen, 1)!=null) {
 			//詰みがある。勝っている
 			set_win(kyokumen.get_teban());
 			return;
 		}
-		*/
 		//駒の損得
 		Loss_koma_value loss_koma_value = new Loss_koma_value(kyokumen);
 		add_value(loss_koma_value.get_value_int());
@@ -95,11 +91,6 @@ public class Value {
 		Safety_gyoku_value safety_gyoku_value = new Safety_gyoku_value(kyokumen);
 		add_value(safety_gyoku_value.get_value_int());
 		///System.out.println("calc_value_present Safety_gyoku_value fin:"+get_value_int());
-		//駒の効きが自分の駒に効いているか,駒が連携しているか,相手の駒が取れそうか
-		///System.out.println("calc_value_present Kiki_with_koma before: "+get_value());
-		Kiki_with_koma kiki_with_koma = new Kiki_with_koma(kyokumen);
-		add_value(kiki_with_koma.get_value_int());
-		///System.out.println("calc_value_present Kiki_with_koma before: "+get_value());
 		//取られそうな駒の評価値を入れる。
 		//
 		/*

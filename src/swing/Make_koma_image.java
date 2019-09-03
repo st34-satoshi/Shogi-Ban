@@ -1,5 +1,7 @@
 package swing;
 
+import java.awt.Window;
+
 import javax.swing.ImageIcon;
 
 /**
@@ -9,106 +11,109 @@ import javax.swing.ImageIcon;
  */
 public class Make_koma_image {
 
-	public static ImageIcon make_koma_image(int koma_number,int teban) {
+	public static ImageIcon make_koma_image(int koma_number,int teban, Window him) {
 		ImageIcon image_icon = null;
-		String file_path = "../koma_image/";
+//		ClassLoader cl = Make_koma_image.class.getClass().getClassLoader(); // to load image
+		ClassLoader classloader = him.getClass().getClassLoader();
+//		URL resUrl = classloader.getResource("hu.png"));
 		switch(koma_number) {
 		case 1:
 			if(teban==1) {
-				image_icon = new ImageIcon(file_path+"hu.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/hu.png"));
+//				image_icon = new ImageIcon("hu.png"));
 			}else {
-				image_icon = new ImageIcon(file_path+"hu_t.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/hu_t.png"));
 			}
 			break;
 		case 2:
 			if(teban==1) {
-				image_icon = new ImageIcon(file_path+"kyou.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/kyou.png"));
 			}else {
-				image_icon = new ImageIcon(file_path+"kyou_t.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/kyou_t.png"));
 			}
 			break;
 		case 3:
 			if(teban==1) {
-				image_icon = new ImageIcon(file_path+"kei.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/kei.png"));
 			}else {
-				image_icon = new ImageIcon(file_path+"kei_t.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/kei_t.png"));
 			}
 			break;
 		case 4:
 			if(teban==1) {
-				image_icon = new ImageIcon(file_path+"gin.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/gin.png"));
 			}else {
-				image_icon = new ImageIcon(file_path+"gin_t.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/gin_t.png"));
 			}
 			break;
 		case 5:
 			if(teban==1) {
-				image_icon = new ImageIcon(file_path+"kin.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/kin.png"));
 			}else {
-				image_icon = new ImageIcon(file_path+"kin_t.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/kin_t.png"));
 			}
 			break;
 		case 6:
 			if(teban==1) {
-				image_icon = new ImageIcon(file_path+"gyoku.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/gyoku.png"));
 			}else {
-				image_icon = new ImageIcon(file_path+"gyoku_t.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/gyoku_t.png"));
 			}
 			break;
 		case 7:
 			if(teban==1) {
-				image_icon = new ImageIcon(file_path+"kaku.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/kaku.png"));
 			}else {
-				image_icon = new ImageIcon(file_path+"kaku_t.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/kaku_t.png"));
 			}
 			break;
 		case 8:
 			if(teban==1) {
-				image_icon = new ImageIcon(file_path+"hisha.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/hisha.png"));
 			}else {
-				image_icon = new ImageIcon(file_path+"hisha_t.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/hisha_t.png"));
 			}
 			break;
 		case 11:
 			if(teban==1) {
-				image_icon = new ImageIcon(file_path+"tokin.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/tokin.png"));
 			}else {
-				image_icon = new ImageIcon(file_path+"tokin_t.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/tokin_t.png"));
 			}
 			break;
 		case 12:
 			if(teban==1) {
-				image_icon = new ImageIcon(file_path+"narikyou.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/narikyou.png"));
 			}else {
-				image_icon = new ImageIcon(file_path+"narikyou_t.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/narikyou_t.png"));
 			}
 			break;
 		case 13:
 			if(teban==1) {
-				image_icon = new ImageIcon(file_path+"narikei.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/narikei.png"));
 			}else {
-				image_icon = new ImageIcon(file_path+"narikei_t.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/narikei_t.png"));
 			}
 			break;
 		case 14:
 			if(teban==1) {
-				image_icon = new ImageIcon(file_path+"narigin.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/narigin.png"));
 			}else {
-				image_icon = new ImageIcon(file_path+"narigin_t.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/narigin_t.png"));
 			}
 			break;
 		case 17:
 			if(teban==1) {
-				image_icon = new ImageIcon(file_path+"uma.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/uma.png"));
 			}else {
-				image_icon = new ImageIcon(file_path+"uma_t.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/uma_t.png"));
 			}
 			break;
 		case 18:
 			if(teban==1) {
-				image_icon = new ImageIcon(file_path+"ryuu.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/ryuu.png"));
 			}else {
-				image_icon = new ImageIcon(file_path+"ryuu_t.png");
+				image_icon = new ImageIcon(classloader.getResource("koma_image/ryuu_t.png"));
 			}
 			break;
 		}

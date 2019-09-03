@@ -20,8 +20,12 @@ public class Action_kihu_listener implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getActionCommand().equals("最初") && state.check_reading_kihu()) {
+			System.out.println("back to first kyokumen");
+			//board = new Board(state.get_kihu().get_first_kyokumen().clone());
 			board.set_kyokumen(state.get_kihu().get_first_kyokumen().clone());
 			board.reset_except_kyokumen();
+			state.get_kihu().get_first_kyokumen().output_kyokumen();
+			//board.output_kyokumen();
 			frame.set_kyokumen(board.get_kyokumen());
 			frame.change_label_teban(board.get_teban_s());
 			state.set_tesuu_first();
@@ -37,6 +41,7 @@ public class Action_kihu_listener implements ActionListener{
 				}
 				frame.change_label_teban(board.get_teban_s());
 				state.set_tesuu_add();
+				state.get_kihu().get_first_kyokumen().output_kyokumen();///
 			}
 		}else if(e.getActionCommand().equals("前へ") && state.check_reading_kihu()) {
 			//局面を戻す

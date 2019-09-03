@@ -241,7 +241,7 @@ public class Kyokumen {
 	public void decide_all_koma_move_place() {
 		for(Koma koma:koma_array) {
 			koma.move_place_clear();
-			koma.decide_move_place_all(this);
+			koma.decide_move_place(this);
 		}
 	}
 	public void add_koma_array(Koma koma) {

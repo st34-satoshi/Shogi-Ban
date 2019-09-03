@@ -142,13 +142,13 @@ public class Frame_s extends JFrame{
 		this.setVisible(true);
 	}
 	public void make_panel(JPanel panel) {
-		panel_ban = new Ban_panel();
+		panel_ban = new Ban_panel(this);
 		panel_ban.set_ban_panel();
 		panel.add(panel_ban);
-		panel_sente = new Komadai_panel();
+		panel_sente = new Komadai_panel(this);
 		panel_sente.set_komadai_panel(645, 390);
 		panel.add(panel_sente);
-		panel_gote = new Komadai_panel();
+		panel_gote = new Komadai_panel(this);
 		panel_gote.set_komadai_panel(10, 50);
 		panel.add(panel_gote);
 		panel_menu = new Menu_panel();

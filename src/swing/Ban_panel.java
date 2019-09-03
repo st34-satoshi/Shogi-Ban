@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
+import java.awt.Window;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -20,6 +21,11 @@ import koma.Koma;
 public class Ban_panel extends JPanel{
 	private GridBagLayout grid_bag_layout;
 	private JPanel[][] panel_array;
+	private Window him;
+
+	public Ban_panel(Window her) {
+		him = her;
+	}
 
 	public void change_panel(int a,int b,Kyokumen kyokumen,Action_listener action_listener) {
 		GridBagLayout gbl = grid_bag_layout;
@@ -62,7 +68,7 @@ public class Ban_panel extends JPanel{
 			gbc.gridy = b-1;
 			gbl.setConstraints(panel, gbc);
 			///駒の画像を表示させる。
-			ImageIcon icon = Make_koma_image.make_koma_image(koma.get_koma_number(), koma.get_teban());
+			ImageIcon icon = Make_koma_image.make_koma_image(koma.get_koma_number(), koma.get_teban(), him);
 			Image image = icon.getImage().getScaledInstance(36, 40, Image.SCALE_DEFAULT);
 			icon = new ImageIcon(image);
 			JButton button = new JButton(icon);
@@ -148,7 +154,7 @@ public class Ban_panel extends JPanel{
 					gbc.gridy = j-1;
 					gbl.setConstraints(panel, gbc);
 					///駒の画像を表示させる。
-					ImageIcon icon = Make_koma_image.make_koma_image(koma.get_koma_number(), koma.get_teban());
+					ImageIcon icon = Make_koma_image.make_koma_image(koma.get_koma_number(), koma.get_teban(), him);
 					Image image = icon.getImage().getScaledInstance(36, 40, Image.SCALE_DEFAULT);
 					icon = new ImageIcon(image);
 					JButton button = new JButton(icon);

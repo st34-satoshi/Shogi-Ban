@@ -53,10 +53,7 @@ public class Hu extends Koma {
 		koma = kyokumen.get_banarray(a, b);
 		if(koma != null) {
 			if(koma.get_teban() == get_teban()) {
-				add_point_my_koma();
 				return;
-			}else {
-				add_point_enemy(koma);
 			}
 		}
 		add_move_place(a*10+b);

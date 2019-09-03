@@ -45,9 +45,6 @@ public class Gin extends Koma {
 				}else {
 					if(koma.get_teban() != get_teban()) {
 						add_move_place(i);
-						add_point_enemy(koma);
-					}else {
-						add_point_my_koma();
 					}
 				}
 			}

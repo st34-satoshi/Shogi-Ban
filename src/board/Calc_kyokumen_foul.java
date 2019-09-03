@@ -89,7 +89,6 @@ public class Calc_kyokumen_foul {
 	public static boolean check_foul_all(Kyokumen kyokumen,Move before_move) {
 		if(check_koma_number(kyokumen)) {
 			//System.out.println("foul koma number!!");
-			///kyokumen.output_kyokumen();///
 			return true;
 		}
 		if(check_dontmove(kyokumen)) {

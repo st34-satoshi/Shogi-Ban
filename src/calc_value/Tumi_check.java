@@ -66,10 +66,6 @@ public class Tumi_check {
 		if(n<0) {
 			return false;
 		}
-		//王手でなければfalse
-		if(!Calc_kyokumen_foul.check_oute(kyokumen, kyokumen.get_teban())) {
-			return false;
-		}
 		ArrayList<Move> move_list_escape = Make_board_list.get_next_move_list_no_foul(kyokumen);
 		if(move_list_escape==null || move_list_escape.isEmpty()) {
 			return true;

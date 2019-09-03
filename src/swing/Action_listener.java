@@ -50,41 +50,25 @@ public class Action_listener extends JFrame implements ActionListener{
 				if(board.check_foul()) {
 					System.out.println(board.get_teban_opposite_s()+"の反則負けです。！！");
 					JOptionPane.showMessageDialog(this, board.get_teban_opposite_s()+"の反則負けです。", "反則",JOptionPane.PLAIN_MESSAGE);
-					//state.set_not_gaming();
-					//frame.end_game();
-					board.get_kihu().make_last_kyokumen();
-					state.set_reading_kihu(board.get_kihu().get_kihu_list().size());
-					frame.set_reading_kihu();
-					return;
+					state.set_not_gaming();
+					frame.end_game();
 				}
 				int sennitite = board.check_sennitite();
 				if(sennitite==1) {
 					//千日手
 					JOptionPane.showMessageDialog(this, "千日手です。", "千日手",JOptionPane.PLAIN_MESSAGE);
-					///state.set_not_gaming();
-					///frame.end_game();
-					board.get_kihu().make_last_kyokumen();
-					state.set_reading_kihu(board.get_kihu().get_kihu_list().size());
-					frame.set_reading_kihu();
-					return;
+					state.set_not_gaming();
+					frame.end_game();
 				}else if(sennitite==2) {
 					//連続王手の千日手。手番が王手している。
 					JOptionPane.showMessageDialog(this, board.get_teban_s()+"の反則負けです。", "反則:連続王手",JOptionPane.PLAIN_MESSAGE);
-					///state.set_not_gaming();
-					///frame.end_game();
-					board.get_kihu().make_last_kyokumen();
-					state.set_reading_kihu(board.get_kihu().get_kihu_list().size());
-					frame.set_reading_kihu();
-					return;
+					state.set_not_gaming();
+					frame.end_game();
 				}else if(sennitite==3) {
 					//連続王手の千日手。手番が王手されている。
 					JOptionPane.showMessageDialog(this, board.get_teban_opposite_s()+"の反則負けです。", "反則:連続王手",JOptionPane.PLAIN_MESSAGE);
-					///state.set_not_gaming();
-					///frame.end_game();
-					board.get_kihu().make_last_kyokumen();
-					state.set_reading_kihu(board.get_kihu().get_kihu_list().size());
-					frame.set_reading_kihu();
-					return;
+					state.set_not_gaming();
+					frame.end_game();
 				}
 				state.set_gaming(board.get_teban_player());
 			}else {

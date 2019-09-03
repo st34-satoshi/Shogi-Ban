@@ -55,7 +55,6 @@ public class Free_kyokumen extends Kyokumen{
 			return null;
 		}
 		set_koma_from_place(koma, after_place/10, after_place%10);
-		koma.set_motigoma(false);//打っているかもしれない
 		if(after_place/10 < 10) {
 			//盤上に移動
 			return null;

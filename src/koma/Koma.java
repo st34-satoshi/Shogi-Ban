@@ -19,8 +19,6 @@ public class Koma {
 	private int point_special;//特別なポイント、攻めに重要とか、守りに重要とか
 	private ArrayList<Integer> move_place;//動ける場所,持ち駒の時は打てる場所,76とか.place分けられない？
 	private boolean motigoma;//持ち駒でなければfalse
-	private int point_my_koma;//自分の駒に効いていれば100000ポイント??先手ならプラス後手ならマイナス
-	private int point_enemy;//相手の駒に効いているか、効いていれば駒の10分の1点??先手ならプラス後手ならマイナス
 
 	public Koma(int teban_n) {
 		teban = teban_n;
@@ -141,15 +139,6 @@ public class Koma {
 		move_place.clear();
 	}
 	/**
-	 * decide move place をする前にすることがある
-	 * @param kyokumen
-	 */
-	public void decide_move_place_all(Kyokumen kyokumen) {
-		point_enemy = 0;
-		point_my_koma = 0;
-		decide_move_place(kyokumen);
-	}
-	/**
 	 * 動ける場所を決める
 	 * 反則は確認しない
 	 * 継承する子クラスで
@@ -170,12 +159,10 @@ public class Koma {
 			if(koma != null) {
 				if(koma.get_teban() == get_teban()) {
 					//自分の駒がある。
-					add_point_my_koma();
 					break;
 				}else {
 					//相手の駒がある。
 					add_move_place(a*10+b);
-					add_point_enemy(koma);
 					break;
 				}
 			}else {
@@ -277,25 +264,6 @@ public class Koma {
 		}else {
 			System.out.println("error: Koma change_teban teban");
 		}
-	}
-	public int get_point_my_koma() {
-		return point_my_koma;
-	}
-	public int get_point_enemy() {
-		return point_enemy;
-	}
-	public void add_point_my_koma() {
-		if(get_teban()==1) {
-			point_my_koma += 100000;
-		}else {
-			point_my_koma -= 100000;
-		}
-	}
-	public void add_point_enemy(Koma koma_enemy) {
-		point_enemy += koma_enemy.get_point_teban()*(-1)/3;
-	}
-	public int get_point_my_koma_and_enemy() {
-		return point_my_koma + point_enemy;
 	}
 
 }

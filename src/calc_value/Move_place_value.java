@@ -13,6 +13,7 @@ public class Move_place_value extends Parent_value {
 
 	public Move_place_value(Kyokumen kyokumen) {
 		super(kyokumen);
+		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
 	/**
@@ -30,7 +31,7 @@ public class Move_place_value extends Parent_value {
 			}
 			value += move_place_n;
 		}
-		set_value_int(value*30000);
+		set_value_int(value);
 	}
 
 }

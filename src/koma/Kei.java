@@ -56,9 +56,6 @@ public class Kei extends Koma {
 			}else {
 				if(koma.get_teban() != get_teban()) {
 					add_move_place(a1*10+b);
-					add_point_enemy(koma);
-				}else {
-					add_point_my_koma();
 				}
 			}
 		}
@@ -69,9 +66,6 @@ public class Kei extends Koma {
 			}else {
 				if(koma.get_teban() != get_teban()) {
 					add_move_place(a2*10+b);
-					add_point_enemy(koma);
-				}else {
-					add_point_my_koma();
 				}
 			}
 		}
